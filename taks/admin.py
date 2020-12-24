@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import downloader
+from .models import downloader, user
 # Register your models here.
 
 
@@ -13,4 +13,10 @@ class DownloadAdmin(admin.ModelAdmin):
     empty_value_display = "-пусто-"
 
 
+class UserAdmin(admin.ModelAdmin):
+    # перечисляем поля, которые должны отображаться в админке
+    list_display = ("id", "name", "username", "email", "address", "phone", "website", "company")
+
+
 admin.site.register(downloader, DownloadAdmin)
+admin.site.register(user, UserAdmin)
