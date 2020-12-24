@@ -5,7 +5,7 @@ import requests
 
 
 def index(request):
-    jsonData_list = downloader.objects.all()
+    jsonData_list = downloader.objects.order_by('id').all()
     count_list = downloader.objects.all().count()
     paginator = Paginator(jsonData_list, 10)  # показывать по 10 записей на странице.
     page_number = request.GET.get('page')  # переменная в URL с номером запрошенной страницы
