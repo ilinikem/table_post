@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import downloader, user
+from .models import downloader, User
 # Register your models here.
 
 
@@ -19,4 +19,4 @@ class UserAdmin(admin.ModelAdmin):
 
 
 admin.site.register(downloader, DownloadAdmin)
-admin.site.register(user, UserAdmin)
+admin.site.register(User, UserAdmin)
